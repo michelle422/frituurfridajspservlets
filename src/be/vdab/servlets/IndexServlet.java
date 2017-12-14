@@ -1,7 +1,6 @@
 package be.vdab.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 
