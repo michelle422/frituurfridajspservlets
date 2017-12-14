@@ -25,8 +25,8 @@ public class IndexServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		DayOfWeek dag = LocalDateTime.now().getDayOfWeek();
-		request.setAttribute("openingsuren", dag.equals(DayOfWeek.MONDAY) || dag.equals(DayOfWeek.THURSDAY) ? 
-				"Vandaag zijn we gesloten" : "Vandaag zijn we open");
+		request.setAttribute("openingsuren", dag.equals(DayOfWeek.MONDAY) 
+			|| dag.equals(DayOfWeek.THURSDAY) ? "gesloten" : "open");
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
 
