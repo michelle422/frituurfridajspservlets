@@ -4,14 +4,14 @@
 <%@page import='java.time.DayOfWeek'%>
 <!doctype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang='nl'>
-	<head><title>Frituur Frida</title></head>
+	<head>
+		<title>Frituur Frida</title>
+		<link rel='icon' href='images/favicon.ico'>
+		<meta name='viewport' content='width=device-width,initial-scale=1'>
+		<link rel='stylesheet' href='styles/default.css'>	
+	</head>
 	<body>
-		<h1>
-			<%
-				DayOfWeek dag = LocalDateTime.now().getDayOfWeek();
-				out.print(dag.equals(DayOfWeek.MONDAY) || dag.equals(DayOfWeek.THURSDAY) ? 
-						"Vandaag zijn we gesloten" : "Vandaag zijn we open");
-			%>
-		</h1>
+		<h1>Frituur Frida</h1>
+		<h2>${openingsuren}</h2>
 	</body>
 </html>
