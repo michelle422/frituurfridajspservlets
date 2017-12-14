@@ -13,6 +13,6 @@
 	<body>
 		<h1>Frituur Frida</h1>
 		<h2>Vandaag zijn we ${openingsuren}</h2>
-		<img src='images/${openingsuren}.png' alt='${openeningsuren}'>
+		<img src='images/${openingsuren}.png' alt='${openingsuren}'>
 	</body>
 </html>
