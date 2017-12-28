@@ -33,8 +33,8 @@ public class SausRepository {
 	}
 	
 	public void create(Saus saus) {
-		saus.setNummer(Collections.max(SAUZEN.keySet()) + 1);
-		SAUZEN.put(saus.getNummer(), saus);
+		saus.setId(Collections.max(SAUZEN.keySet()) + 1);
+		SAUZEN.put(saus.getId(), saus);
 	}
 	
 	public List<Saus> findByIngredient(String ingredient) {

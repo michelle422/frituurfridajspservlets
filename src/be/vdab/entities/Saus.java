@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Saus {
-	private long nummer;
+	private long id;
 	private String naam;
 	private List<String> ingredienten = new ArrayList<>();
-	public Saus(long nummer, String naam, List<String> ingredienten) {
-		this.nummer = nummer;
+	public Saus(long id, String naam, List<String> ingredienten) {
+		this.id = id;
 		this.naam = naam;
 		this.ingredienten.addAll(ingredienten);
 	}
-	public long getNummer() {
-		return nummer;
+	public long getId() {
+		return id;
 	}
-	public void setNummer(long nummer) {
-		this.nummer = nummer;
+	public void setId(long id) {
+		this.id = id;
 	}
 	public String getNaam() {
 		return naam;

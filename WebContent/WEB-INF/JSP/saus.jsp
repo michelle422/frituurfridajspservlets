@@ -14,20 +14,20 @@
 				&#42; <%-- de HTML code van een asterisk --%>
 			</c:forEach>
 		</h1>
-		<form method='post' action="<c:url value='/sauzen/verwijderen.htm'/>">	
+		<form method='post' action="<c:url value='/saus/verwijderen.htm'/>">	
 			<c:forEach var='saus' items='${sauzen}'>
 				<h2>
 					<label>
 						<input type='checkbox' name='id' value='${saus.id}'> ${saus.naam}
 					</label>
 				</h2>
-				<img src='images/${saus.naam}.png' alt='${saus.naam}'>
+				<img src='<c:url value="images/${saus.naam}.png"/>' alt='${saus.naam}'>
 				Ingredienten: 
 				<c:forEach var='ingredient' items='${saus.ingredienten}' varStatus="status">
 					${ingredient}<c:if test="${not status.last}">, </c:if>
 				</c:forEach> 
 			</c:forEach>
-		<div><input type='submit' value='Aangevinkte sauzen verwijderen'></div>
+			<div><input type='submit' value='Aangevinkte sauzen verwijderen'></div>
 		</form>
 	</body>
 </html>
