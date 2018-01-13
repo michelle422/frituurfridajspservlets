@@ -1,4 +1,5 @@
 <%@page contentType='text/html' pageEncoding='UTF-8'%>
+<%@taglib uri='http://vdab.be/tags' prefix='vdab'%>
 <%-- Op de vorige regel wordt session="false" niet vermeld --%>
 <%-- Zo komt session="true" (de default) --%>
 <%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
@@ -10,6 +11,7 @@
 	</c:import>
 </head>
 <body>
+	<vdab:menu/>
 	<h1>Zoek de friet</h1>
 	<form method='post'>
 		<c:forEach items='${zoekDeFrietSpel.deuren}' var='deur' varStatus="status">

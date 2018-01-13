@@ -75,7 +75,7 @@ public class SausRepository extends AbstractRepository {
 	
 	public void delete(Set<Long> idStream) {
 		 StringBuilder sql = new StringBuilder(DELETE);
-		 idStream.forEach(id -> sql.append("?, "));
+		 idStream.forEach(id -> sql.append("?,"));
 		 sql.deleteCharAt(sql.length()-1);
 		 sql.append(')');
 		 try (Connection connection = dataSource.getConnection(); 

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8" session="false"%>
+<%@taglib uri='http://vdab.be/tags' prefix='vdab'%>
 <%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
 <%@page import='be.vdab.entities.Saus'%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,6 +10,7 @@
 		</c:import>
 	</head>
 	<body>
+		<vdab:menu/>
 		<h1>Sauzen
 			<c:forEach begin='1' end='5'>
 				&#42; <%-- de HTML code van een asterisk --%>
