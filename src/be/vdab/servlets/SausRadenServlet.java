@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 
 import be.vdab.entities.Saus;
 import be.vdab.entities.SausRadenSpel;
@@ -24,8 +26,13 @@ public class SausRadenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/sausraden.jsp";
 	private static final String SPEL = "sausRadenSpel";
-	private final SausRepository sausRepository = new SausRepository();
-       
+	private final transient SausRepository sausRepository = new SausRepository();
+    
+	@Resource(name = SausRepository.JNDI_NAME)
+	public void setDataSource(DataSource dataSource) {
+		sausRepository.setDataSource(dataSource);
+	}
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
