@@ -79,7 +79,8 @@ input[type='checkbox'] {
 
 nav ul {
 	background-color: red;
-	padding: 0.4em 0;
+	list-style: none;
+	padding: 0;
 }
 
 nav li {
