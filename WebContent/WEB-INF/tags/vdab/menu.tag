@@ -10,5 +10,6 @@
 <li><a href="<c:url value='/meisjesjongens.htm'/>">Meisjes Jongens</a></li>
 <li><a href="<c:url value='/zoekdefriet.htm'/>">Zoek de Friet</a></li>
 <li><a href="<c:url value='/sausraden.htm'/>">Saus Raden</a></li>
+<li><a href="<c:url value='/gastenboek.htm'/>">Gastenboek</a></li>
 </ul></nav>
 </header>

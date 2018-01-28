@@ -54,7 +54,7 @@ label {
 	cursor: pointer;
 }
 
-input {
+input, textarea {
 	display: block;
 	margin-top: 0.2em;
 	margin-bottom: 1em;
