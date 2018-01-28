@@ -1,8 +1,10 @@
 package be.vdab.servlets;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -46,6 +48,10 @@ public class GastenBoekServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		if (request.getParameter("toevoegen") != null) {
 			toevoegen(request, response);
+		} else if (request.getParameter("uitloggen") != null) {
+			uitloggen(request, response);
+		} else if (request.getParameter("verwijderen") != null) {
+			verwijderen(request, response);
 		}
 	}
 	
@@ -68,4 +74,18 @@ public class GastenBoekServlet extends HttpServlet {
 		}
 	}
 
+	private void uitloggen(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getSession().removeAttribute("beheer");
+		response.sendRedirect(response.encodeRedirectURL(
+				 request.getContextPath() + REDIRECT_URL));
+	}
+	
+	private void verwijderen(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String[] idAlsString = request.getParameterValues("id");
+		if (idAlsString != null) {
+			gastenBoekRepository.delete(Arrays.stream(idAlsString)
+									.map(id -> Long.parseLong(id))
+									.collect(Collectors.toSet()));
+		}
+	}
 }

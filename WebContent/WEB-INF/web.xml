@@ -4,6 +4,10 @@
     <param-name>helpDeskNummer</param-name>
     <param-value>1-800-755-654</param-value>
   </context-param>
+  <context-param>
+    <param-name>paswoord</param-name>
+    <param-value>kazekagesama</param-value>
+  </context-param>
   <session-config>
     <session-timeout>20</session-timeout>
     <tracking-mode>COOKIE</tracking-mode>

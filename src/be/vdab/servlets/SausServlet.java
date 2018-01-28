@@ -31,21 +31,8 @@ public class SausServlet extends HttpServlet {
     /**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		List<Saus> sauzen = Arrays.asList(
-//				new Saus(1001, "cocktail", Arrays.asList("room", "ketchup", "paprikapoeder", "sherry", "cognac", "gembersiroop")), 
-//				new Saus(1002, "mayonaise", Arrays.asList("eidooier", "olie", "azijn", "mosterd", "suiker", "kruiden", "peper", "zout")), 
-//				new Saus(1002, "mosterd", Arrays.asList("mosterzaden", "water", "azijn", "suiker", "zout", "kruiden", "rozemarijn")), 
-//				new Saus(1003, "tartare", Arrays.asList("mayonaise", "peterselie", "ei", "uitjes")), 
-//				new Saus(1004, "vinaigrette", Arrays.asList("olijfolie", "wijnazijn", "zout", "peper", "kruiden")));
-				
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		((AtomicInteger) this.getServletContext().getAttribute(SAUS_REQUESTS)).incrementAndGet();
-//		List<Saus> sauzen = new ArrayList<>();
-//		sauzen.add(new Saus(11L, "cocktail", Arrays.asList("room", "ketchup", "paprikapoeder", "sherry", "cognac", "gembersiroop")));
-//		sauzen.add(new Saus(12L, "mayonaise", Arrays.asList("eidooier", "olie", "azijn", "mosterd", "suiker", "kruiden", "peper", "zout")));
-//		sauzen.add(new Saus(22L, "mosterd", Arrays.asList("mosterzaden", "water", "azijn", "suiker", "zout", "kruiden", "rozemarijn")));
-//		sauzen.add(new Saus(13L, "tartare", Arrays.asList("mayonaise", "peterselie", "ei", "uitjes")));
-//		sauzen.add(new Saus(14L, "vinaigrette", Arrays.asList("olijfolie", "wijnazijn", "zout", "peper", "kruiden")));
 		request.setAttribute("sauzen", sausRepository.findAll());
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}

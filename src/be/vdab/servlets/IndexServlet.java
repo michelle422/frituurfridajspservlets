@@ -32,7 +32,7 @@ public class IndexServlet extends HttpServlet {
 		LocalDate vandaag = LocalDate.now();
 		DayOfWeek weekdag = vandaag.getDayOfWeek();
 		request.setAttribute("openingsuren",
-		weekdag == DayOfWeek.MONDAY || weekdag == DayOfWeek.THURSDAY ?
+				weekdag == DayOfWeek.MONDAY || weekdag == DayOfWeek.THURSDAY ?
 				"gesloten" : "open");
 		request.setAttribute("adres", new Adres("Stationplein", "23", new Gemeente("Oudenaarde", 9700)));
 		RequestDispatcher dispatcher = request.getRequestDispatcher(VIEW);

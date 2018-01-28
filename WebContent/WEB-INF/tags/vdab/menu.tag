@@ -11,5 +11,6 @@
 <li><a href="<c:url value='/zoekdefriet.htm'/>">Zoek de Friet</a></li>
 <li><a href="<c:url value='/sausraden.htm'/>">Saus Raden</a></li>
 <li><a href="<c:url value='/gastenboek.htm'/>">Gastenboek</a></li>
+<li><a href="<c:url value='/inloggen.htm'/>">Inloggen</a></li>
 </ul></nav>
 </header>
